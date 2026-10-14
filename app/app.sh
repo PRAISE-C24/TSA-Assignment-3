@@ -15,7 +15,12 @@ print_help() {
     echo "=========================================="
 }
 
-CMD="${1:-help}"
+CMD="${1:-}"
+if [ -z "$CMD" ]; then
+    echo "Error: No command provided." >&2
+    print_help
+    exit 2
+fi
 shift || true
 
 case "$CMD" in
@@ -41,7 +46,6 @@ case "$CMD" in
             echo "Error: Both host and port arguments are required." >&2
             exit 2
         fi
-        # Validate port number (1-65535)
         if ! [[ "$PORT" =~ ^[0-9]+$ ]] || [ "$PORT" -lt 1 ] || [ "$PORT" -gt 65535 ]; then
             echo "Error: Invalid port '$PORT'. Must be an integer between 1 and 65535." >&2
             exit 2
