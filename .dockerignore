@@ -1,0 +1,15 @@
+# Git & CI configuration
+.git
+.github
+tests/
+scripts/
+logs/
+
+# Local scripts & documentation
+lint.sh
+ci.sh
+README.md
+
+# OS specific files
+.DS_Store
+Thumbs.db
