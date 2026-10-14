@@ -1,0 +1,20 @@
+# Application logs
+logs/
+*.log
+
+# Temporary and backup files
+*.tmp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local environment variables
+.env
